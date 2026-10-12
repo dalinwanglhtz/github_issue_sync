@@ -80,11 +80,13 @@ export default class GitHubIssueDashboard extends LightningElement {
             const eventPayload = response.data.payload;
 
             if (eventPayload.Repository__c === this.fullRepoName) {
-                this.dispatchEvent({
-                    title: 'Real-Time Update',
-                    message: eventPayload.Status_Message__c,
-                    variant: 'info'
-                });
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Real-Time Update',
+                        message: eventPayload.Status_Message__c,
+                        variant: 'info'
+                    })
+                );
                 refreshApex(this.issues);
                 this.isSyncing = false;
             }
