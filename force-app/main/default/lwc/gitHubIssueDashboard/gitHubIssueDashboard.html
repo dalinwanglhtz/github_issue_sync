@@ -1,14 +1,14 @@
 <template>
     <lightning-card title="GitHub Issue Dashboard" icon-name="custom:custom63">
-        <div class="slds-m-around-medium">
-            <div class="slds-grid slds-gutters slds-m-bottom_medium">
-                <div class="slds-col">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-m-bottom_medium slds-grid_vertical-align-end">
+                <div class="slds-col slds-size_4-of-12 slds-m-right_medium">
                     <lightning-input label="Repository Owner" value={repoOwner} onchange={handleOwnerChange}></lightning-input>
                 </div>
-                <div class="slds-col">
+                <div class="slds-col slds-size_4-of-12 slds-m-right_medium">
                     <lightning-input label="Repository Name" value={repoName} onchange={handleRepoChange}></lightning-input>
                 </div>
-                <div class="slds-col slds-align_bottom">
+                <div class="slds-col slds-size_3-of-12">
                     <lightning-button variant="brand" label="Sync from GitHub" onclick={handleSync} disabled={isSyncing}></lightning-button>
                 </div>
             </div>
